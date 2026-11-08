@@ -1,0 +1,659 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050914">
+
+<title>FOX STORE | خدمات المحمول والكمبيوتر</title>
+
+<style>
+:root {
+  --bg:#050914;
+  --card:#0d1830;
+  --text:#ffffff;
+  --muted:#a9bad2;
+  --blue:#087cff;
+  --cyan:#21d7ff;
+  --border:#164a8a;
+}
+
+body.light {
+  --bg:#f2f6ff;
+  --card:#ffffff;
+  --text:#101d33;
+  --muted:#53647c;
+  --border:#b7d4f5;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:Tahoma,Arial,sans-serif;
+  line-height:1.8;
+  transition:background .3s,color .3s;
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
+}
+
+.container {
+  width:92%;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* HEADER */
+
+header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:var(--card);
+  border-bottom:1px solid var(--border);
+  padding:14px 0;
+}
+
+nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.brand {
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.brand span {
+  color:var(--cyan);
+}
+
+.nav-links {
+  display:flex;
+  gap:22px;
+}
+
+.nav-links a {
+  font-size:14px;
+  transition:.3s;
+}
+
+.nav-links a:hover {
+  color:var(--cyan);
+}
+
+.theme-btn {
+  background:transparent;
+  color:var(--text);
+  border:1px solid var(--cyan);
+  padding:9px 13px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* BUTTONS */
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:12px 23px;
+  border-radius:30px;
+  background:linear-gradient(100deg,#075bdb,#08a8e8);
+  color:#fff;
+  font-weight:bold;
+  border:1px solid transparent;
+  transition:.3s;
+  cursor:pointer;
+}
+
+.btn:hover {
+  transform:translateY(-3px);
+  box-shadow:0 8px 25px #087cff55;
+}
+
+.btn-outline {
+  background:transparent;
+  border:1px solid var(--cyan);
+  color:var(--cyan);
+}
+
+/* HERO */
+
+.hero {
+  text-align:center;
+  padding:55px 0 45px;
+}
+
+/* LOGO */
+
+.logo-container {
+  width:210px;
+  height:210px;
+  margin:0 auto 22px;
+  border-radius:50%;
+  overflow:hidden;
+  background:#000;
+  border:2px solid #087cff;
+  box-shadow:
+    0 0 15px #087cff,
+    0 0 40px #087cff55;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.logo-container img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+h1 {
+  font-size:clamp(42px,8vw,76px);
+  font-weight:1000;
+  line-height:1.3;
+  letter-spacing:1px;
+}
+
+h1 span {
+  color:var(--cyan);
+}
+
+.subtitle {
+  font-size:clamp(19px,4vw,28px);
+  font-weight:bold;
+  margin:8px 0;
+}
+
+.description {
+  color:var(--muted);
+  max-width:650px;
+  margin:12px auto 25px;
+}
+
+.hero-buttons {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+/* SECTIONS */
+
+section {
+  padding:45px 0;
+}
+
+.section-title {
+  text-align:center;
+  font-size:28px;
+  margin-bottom:30px;
+}
+
+.section-title::after {
+  content:"";
+  display:block;
+  width:75px;
+  height:3px;
+  background:var(--cyan);
+  margin:10px auto;
+  border-radius:5px;
+}
+
+/* SERVICES */
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.service {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:25px 15px;
+  text-align:center;
+  transition:.3s;
+}
+
+.service:hover {
+  transform:translateY(-6px);
+  border-color:var(--cyan);
+  box-shadow:0 10px 30px #087cff25;
+}
+
+.service .icon {
+  font-size:38px;
+}
+
+.service h3 {
+  margin:10px 0 5px;
+}
+
+.service p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* BRANDS */
+
+.brands {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  border:1px solid var(--border);
+  border-radius:40px;
+  overflow:hidden;
+  background:var(--card);
+}
+
+.brands span {
+  padding:12px 23px;
+  font-size:20px;
+  font-weight:bold;
+  border-left:1px solid var(--border);
+}
+
+.apple {color:#ffffff}
+.samsung {color:#6796e9}
+.oppo {color:#28c982}
+.redmi {color:#ff755d}
+.realme {color:#e4c42c}
+
+/* CONTACT */
+
+.contact-box {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:30px 15px;
+  text-align:center;
+}
+
+.phone-list {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+  margin:25px 0;
+}
+
+.phone {
+  direction:ltr;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  background:var(--bg);
+  border:1px solid var(--border);
+  padding:12px 17px;
+  border-radius:40px;
+  font-size:21px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.phone:hover {
+  border-color:var(--cyan);
+}
+
+.whatsapp-icon {
+  width:27px;
+  height:27px;
+  fill:#25d366;
+  flex-shrink:0;
+}
+
+.contact-buttons {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.address {
+  margin-top:25px;
+  font-weight:bold;
+}
+
+/* FLOATING WHATSAPP */
+
+.floating-wa {
+  position:fixed;
+  bottom:22px;
+  left:20px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25d366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+  box-shadow:0 5px 20px #0005;
+  transition:.3s;
+}
+
+.floating-wa:hover {
+  transform:scale(1.1);
+}
+
+.floating-wa svg {
+  width:34px;
+  height:34px;
+  fill:white;
+}
+
+/* FOOTER */
+
+footer {
+  text-align:center;
+  padding:25px;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+  .nav-links {
+    display:none;
+  }
+
+  .grid {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .brands span {
+    padding:10px 13px;
+    font-size:16px;
+  }
+
+  .phone {
+    font-size:18px;
+  }
+
+  .logo-container {
+    width:175px;
+    height:175px;
+  }
+
+}
+
+@media(max-width:420px) {
+
+  .grid {
+    grid-template-columns:1fr;
+  }
+
+  .phone {
+    font-size:17px;
+  }
+
+  .brand {
+    font-size:21px;
+  }
+
+  .theme-btn {
+    font-size:12px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+
+<a href="#" class="brand">
+FOX <span>STORE</span>
+</a>
+
+<div class="nav-links">
+<a href="#services">خدماتنا</a>
+<a href="#brands">البراندات</a>
+<a href="#contact">تواصل معنا</a>
+</div>
+
+<button class="theme-btn" id="themeToggle">
+☀️ الوضع الفاتح
+</button>
+
+</nav>
+</div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero container">
+
+<div class="logo-container">
+<img src="fox-logo.png" alt="FOX STORE Logo">
+</div>
+
+<h1>FOX <span>STORE</span></h1>
+
+<div class="subtitle">
+خدمات المحمول والكمبيوتر
+</div>
+
+<p class="description">
+كل اللي محتاجه لموبايلك والكمبيوتر في مكان واحد.
+منتجات أصلية، صيانة، وشراء وبيع واستبدال.
+</p>
+
+<div class="hero-buttons">
+
+<a href="https://wa.me/201140746568" class="btn">
+💬 واتساب
+</a>
+
+<a href="tel:01140746568" class="btn btn-outline">
+📞 اتصال مباشر
+</a>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="container" id="services">
+
+<h2 class="section-title">خدماتنا</h2>
+
+<div class="grid">
+
+<div class="service">
+<div class="icon">🎧</div>
+<h3>إكسسوارات موبايلات</h3>
+<p>سماعات وشواحن وإكسسوارات متنوعة.</p>
+</div>
+
+<div class="service">
+<div class="icon">📱</div>
+<h3>اسكرينات</h3>
+<p>اسكرينات وحماية للموبايل.</p>
+</div>
+
+<div class="service">
+<div class="icon">📲</div>
+<h3>جرابات</h3>
+<p>جرابات بأشكال وموديلات مختلفة.</p>
+</div>
+
+<div class="service">
+<div class="icon">🔄</div>
+<h3>بيع وشراء واستبدال</h3>
+<p>بيع وشراء واستبدال الأجهزة.</p>
+</div>
+
+<div class="service">
+<div class="icon">💻</div>
+<h3>خدمات الكمبيوتر</h3>
+<p>جميع خدمات الكمبيوتر.</p>
+</div>
+
+<div class="service">
+<div class="icon">🛠️</div>
+<h3>صيانة فورية بالضمان</h3>
+<p>صيانة مع ضمان على الخدمة.</p>
+</div>
+
+</div>
+</section>
+
+<!-- BRANDS -->
+
+<section class="container" id="brands">
+
+<h2 class="section-title">
+منتجات أصلية بالضمان
+</h2>
+
+<div class="brands">
+<span class="apple">Apple</span>
+<span class="samsung">SAMSUNG</span>
+<span class="oppo">OPPO</span>
+<span class="redmi">Redmi</span>
+<span class="realme">realme</span>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="container" id="contact">
+
+<h2 class="section-title">تواصل مع FOX STORE</h2>
+
+<div class="contact-box">
+
+<p>يسعدنا تواصلكم للاستفسار عن المنتجات والخدمات.</p>
+
+<div class="phone-list">
+
+<a href="https://wa.me/201140746568" class="phone">
+
+<svg class="whatsapp-icon" viewBox="0 0 24 24">
+<path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6A11.8 11.8 0 0 0 20.5 3.5ZM12 21a9.2 9.2 0 0 1-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9.2 9.2 0 1 1 12 21Z"/>
+</svg>
+
+01140746568
+</a>
+
+<a href="https://wa.me/201039554664" class="phone">
+
+<svg class="whatsapp-icon" viewBox="0 0 24 24">
+<path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6A11.8 11.8 0 0 0 20.5 3.5ZM12 21a9.2 9.2 0 0 1-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9.2 9.2 0 1 1 12 21Z"/>
+</svg>
+
+01039554664
+</a>
+
+</div>
+
+<div class="contact-buttons">
+
+<a href="tel:01140746568" class="btn">
+📞 اتصل الآن
+</a>
+
+<a href="https://wa.me/201039554664" class="btn btn-outline">
+💬 راسلنا واتساب
+</a>
+
+</div>
+
+<div class="address">
+📍 المريوطية – هرم، أول شارع العمدة من العروبة
+<br>
+بجوار بنزرايكا وكبابجي الشاطر عمرو
+</div>
+
+</div>
+</section>
+
+</main>
+
+<!-- FLOATING WHATSAPP -->
+
+<a href="https://wa.me/201140746568"
+class="floating-wa"
+aria-label="تواصل واتساب">
+
+<svg viewBox="0 0 24 24">
+<path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6A11.8 11.8 0 0 0 20.5 3.5ZM12 21a9.2 9.2 0 0 1-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9.2 9.2 0 1 1 12 21Zm5-6.9c-.3-.2-1.7-.9-2-.9s-.5-.2-.7.2-.8.9-.9 1.1-.3.2-.6.1a7.5 7.5 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.3 1 2.6 1.2 2.8 2 3.1 5 4.3c.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4s.2-1.3.1-1.4-.2-.2-.5-.3Z"/>
+</svg>
+
+</a>
+
+<footer>
+© 2026 FOX STORE — جميع الحقوق محفوظة
+</footer>
+
+<script>
+
+// DARK / LIGHT MODE
+
+const themeToggle = document.getElementById("themeToggle");
+
+function changeTheme(mode) {
+
+  document.body.classList.toggle("light",mode==="light");
+
+  themeToggle.textContent =
+    mode==="light"
+    ? "🌙 الوضع الغامق"
+    : "☀️ الوضع الفاتح";
+
+  localStorage.setItem("foxTheme",mode);
+}
+
+changeTheme(localStorage.getItem("foxTheme") || "dark");
+
+themeToggle.addEventListener("click",function(){
+
+  const newMode =
+    document.body.classList.contains("light")
+    ? "dark"
+    : "light";
+
+  changeTheme(newMode);
+
+});
+
+</script>
+
+</body>
+</html>
